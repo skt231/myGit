@@ -12,18 +12,33 @@ values(id_counter.nextval,#{name},#{height},#{birthday})
 select * from customer where id=#{id}
 </select>
 <select id="selectAll" resultType="com.human.dto.CustomerDto">
- select *  from customer order by id
+select * from customer order by id
 </select>
 
 <delete id="delete">
 delete from customer where id=#{id}
 </delete>
 <update id="update">
-update customer set name=#{name},height,birthday=#{birthday} where id=#{id}
+update customer set name=#{name},height=#{height},birthday=#{birthday}
+ where id=#{id}
 </update>
 
-<select id="selectMaxId" resultType="com.human.dto.CustomerHobbyVo2">
-select customer.id,name,height,birthday,hobby from customer,hobby 
-where customer.id=hobby.id
+<select id="selectMaxId" resultType="Integer">
+select max(id) as id from customer
 </select>
+
+<select id="selectAllCustomerHobby" resultType="com.human.vo.CustomerHobbyVo2">
+select customer.id,name,height,birthday,hobby
+ from customer,hobby where customer.id=hobby.id
+</select>
+
 </mapper>
+
+
+
+
+
+
+
+
+

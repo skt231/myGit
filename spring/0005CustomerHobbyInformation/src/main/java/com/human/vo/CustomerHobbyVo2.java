@@ -1,19 +1,34 @@
-package com.human.dto;
+package com.human.vo;
 
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class CustomerDto {
+public class CustomerHobbyVo2 {
 	private int id;
 	private String name;
 	private double height;
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm")
 	private Date birthday;
+	
+	String hobby;
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+	public CustomerHobbyVo2() {
+		
+	}
 
 	@Override
 	public String toString() {
-		return "CustomerDto [id=" + id + ", name=" + name + ", height=" + height + ", birthday=" + birthday + "]";
+		return "CustomerVo [id=" + id + ", name=" + name + ", height=" + height + ", birthday=" + birthday + ", hobbys="
+				+ hobby + "]";
 	}
 
 	public int getId() {
