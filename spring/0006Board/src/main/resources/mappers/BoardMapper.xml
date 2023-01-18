@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.human.dao.BoardDao">
+<insert id="create">
+	insert into tbl_board(bno,title,content,writer) values(seq_board.nextval,#{title},#{content),#{writer})
+</insert>
+<select id="read" resultType="BoardDto">
+ select * from tbl_board where bno=#{bno}
+</select>
+<update id="update">
+	update tbl_board set title=#{title},content=#{content} where bno=#{bno}
+</update>
+<delelte id="delete">
+	delete from tbl_board where bno=#{bno}
+</delelte>
+
+
+</mapper>
