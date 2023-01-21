@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from</title>
+</head>
+<body>
+    <h4>form안에 없으면 버튼이 기능을 안함</h4>  
+    <button>submit</button>
+    <form action="/toso">
+        <p>
+        <label for="username">username : </label>
+        <input type="text" placeholder="username" name="username" >
+        </p>
+        <p>
+        <label for="password">password : </label>
+        <input type="password" placeholder="password" name="password" >
+        </p> 
+        <button>submit</button> 
+        <h4>form안에 버튼을 누르면 어떤 버튼이든 제출을 함</h4>   
+        <input type="submit" value="click">
+        <h5>input type=submit나쁜 방법은 아닌데 닫는 태그가 없음</h5>
+    </form>
+     <h3>label 사용법</h3>
+     <h4>label을 눌러도 checkbox가 활성화 됨(label과 chekckbox를 연결할떄 유용)</h4>
+     <div class ="preference">
+       <label for="cheese"> Do you like cheese?</label>
+       <input type="checkbox" name="cheese" id="cheese">
+    </div>
+    <div class ="preference">
+        <label for="peas"> Do you like peas?</label>
+        <input type="checkbox" name="peas" id="peas">
+     </div>
+     <hr>
+     <h3>search google</h3>
+     <form action="https://www.google.co.kr/search">
+     <input type="text" name="q" placeholder="text">[작동을 못함 query이기 때문에 type을 search로 해야함]<br>
+     <input type="search" name="q" placeholder="search">작동 가능
+     <button>search google</button>
+    </form>
+    <h3>search youtube</h3>
+    <h5>유튜브는 text만 됨</h5>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query" placeholder="text">작동 가능<br>
+        <input type="search" name="search_query" placeholder="search">[작동을 못함 query이기 때문에 type을 search로 해야함]
+        <button>search youtube</button>
+       </form>
+<hr>
+<h2>More Inputs</h2>
+<form action="/birds">
+    <input type="checkbox" name="agree_tos" id="agree">
+    <label for="agree" required>I agree to everything</label>
+    <button>submit</button>
+    <p>
+        <label for="large">large</label><input type="radio" name="size" id="large" value="large">
+        <label for="midium"> Midium</label><input type="radio" name="size" id="midium" value="midium">
+        <label for="small">Small</label> <input type="radio" name="size" id="small" value="small">
+        <button>submit</button>
+    </p>
+    <p>
+        <label for="meal">Please Select an Entree</label>
+        <select name="meal" id="meal">
+            <option value="">---please select---</option>
+            <option value="fish">fish</option>
+            <option value="veg">veg</option>
+            <option value="chicken">chicken</option>
+            <option value="cow">cow</option>
+            <option value="chock">chock</option>
+            <option value="egg">egg</option>
+            <option value="peanuts">peanuts</option>
+        </select>
+        <button>submit</button>
+    </p>
+</form>
+<hr>
+<hr>
+<form action="">
+    <p>
+    <label for="cheese1">Amount of Cheese</label>
+    <input type="range" name="cheese_level" id="cheese1" min="1" max="100" value="75">
+    <button>submit</button>
+    </p>
+    <p>
+        <label for="requests">Any Special Requests?</label><br>
+        <textarea id="requests" name="requests" rows="5"></textarea>
+        <button>submit</button>
+    </p>
+</form>
+<hr>
+<form action="">
+    <p>
+        <label for="id">id : </label>
+        <input type="text" placeholder="username" name="id" id="id" required>
+        </p>
+        <p>
+        <label for="pw">pw : </label>
+        <input type="password" placeholder="password" name="pw" id="pw" required>
+        </p> 
+        <button>submit</button> 
+</form>
+</body>
+</html>
