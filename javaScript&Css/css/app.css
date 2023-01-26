@@ -1,0 +1,34 @@
+/* h2{
+    background-color: cornflowerblue;
+    color : purple;
+    border: "1px";
+}
+button{
+    color:white;
+    background-color: cyan;
+}
+p{
+    background-color:rgb(255,167,23);
+    color: darkblue;
+} */
+h1{
+    text-align: center;
+    width: auto;
+    background-color: antiquewhite;
+    font-weight: bolder;
+    letter-spacing: 15px;
+    font-size: 50px;
+    margin: 0px;
+    font-family: fantasy;
+}
+h2{
+    text-decoration: red underline wavy;
+}
+p{
+    font-weight: lighter;
+    line-height: 1.5;
+}
+a{
+    color: red;
+
+}

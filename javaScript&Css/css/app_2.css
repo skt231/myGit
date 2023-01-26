@@ -1,0 +1,97 @@
+*{
+    margin: 3px;
+}
+body{
+    background-color: #f1faee;
+}
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+h1,h2{
+    color: #1d3557;
+}
+#signup{
+    background-color: #1d3557;
+    color: #f1faee;
+}
+span{
+    color: #457b9d;
+}
+.tag{
+    background-color: #e63946;
+    color: #f1faee;
+
+}
+.post a{
+    color: #457b9d;
+}
+footer a{
+    color: #e81f30;
+}
+/* h2 다음에(인접합) button이 있는거에 적용 */
+h2 + button{
+    background-color: pink;
+    font-size: 20px;
+}
+/* 직계자손 선택자: div 태그에 속한 모든 li가 아니라 직계자손인 li태그만 선택 
+한단계 아래만 선택*/
+footer > a{
+    color: #457b9d;
+}
+/* 속성 선택자 */
+input[type="password"]{
+    color: #e63946;
+}
+section[class="post"]{
+    background-color: burlywood;
+}
+/* section.post{
+    font-size: ;
+} */
+a[href *= "google"]{
+    color: magenta;
+}
+/* button:hover{
+    
+} */
+.post button:hover{
+    background-color: #e64946;
+    color: #f1faee;
+}
+a:hover{
+    text-decoration: red underline;
+    
+}
+.post button:active{
+    background-color: #02c39a;
+}
+/* 부분선택 */
+/* div.square:nth-child(2n-1){
+    background-color: red;
+}
+div.square:nth-child(2n){
+    background-color: black;
+} */
+h2::first-letter{
+    font-size:50px;
+    color: #e63946;
+}
+p::first-line{
+    font-size: 30px;
+    color: #02c39a;
+}
+p::selection{
+    background-color: #fcbf49;
+}
+button:hover{
+    background-color: olive;
+    font-size: 10px;
+}
+/* 특이도 경쟁 : ID > CLASS > ELEMENT를 우선으로한다. */
+.post button:hover{
+    background-color: #e63946;
+    
+}
+/* inherit 상속 받도록 설정 ex:color :inherit */
+

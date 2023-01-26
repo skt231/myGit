@@ -1,0 +1,55 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    text-align: center;
+    font-size: 50px;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    flex-direction:row;
+    justify-content: center;
+    /* 주축을 따라 정렬 */
+    flex-wrap: no-wrap;
+    /* 주축이 수직일떄 새로운 열을 만들어 요소를 정렬하는 속성 */
+    align-items: flex-start;
+    /* 교차축을 따라 아이템을 배열 */
+    /* align-content:space-around; */
+    /* 행이나 열이 여러개일때 교차축을 기준으로 정렬,여러 행,열이 있을때만 사용하는 정ㄹ8ㄹ/wrap이나 wrap-reverse가 적용되어야함 */
+    /* align-self:flex-start; */
+    /* align-items와 비슷하지만 단일 요소에 사용하거나 플랙스 컨테이너에서 두개요소에 개별로 사용/개별요소에 적용할떄 사용 */
+
+}
+#container div{
+    width:200px;
+    height:200px;
+    max-width: 300px;
+    flex-basis: 200px;
+    /* 플랙스 컨테이너의 각 아이템에 관련된 세가지의 특성과 공간이 있을떄나 공간이 적을떄  어떻게 그들이 늘어나고 줄어드는지.. */
+    /* flex-basis: 요소가 배치되기 전에 요소의 최초 크기를 결정/플랙스 컨테이너에 추가되기전 시작점 */
+    /* flex-grow:공간이 있을떄  요소가 그 공간을 얼마나 차지할지 정한다. */
+    /* flex-shrink: 컨테이너에 충분한 공간이 없을떄 요소들이 줄어드는 비율을 통제한다.  */
+
+}
+div:nth-of-type(2){
+    align-self: flex-end;
+}
+div:nth-of-type(3){
+    align-self: center;
+}
+div:nth-last-of-type(1){
+    flex-grow: 1;
+    /* 남은 공간을 차지 하게 됨/0이면 안줄어들음 */
+    flex-shrink: 2;
+
+}
+div:nth-of-type(4){
+    flex-grow: 2;
+}
