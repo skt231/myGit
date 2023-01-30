@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.dao.IPocketDao">
+<insert id="insert">
+insert into pocket(name,knife,pencil,ballpen) values(#{name},#{knife},#{pencil},#{ballpen})
+</insert>
+<select id="selectAll" resultType="pocketDto">
+select * from pocket
+</select>
+<select id="selectName" resultType="pocketDto">
+select * from pocket where name=#{name}
+</select>
+<update id="update">
+update pocket set knife=#{knife},pencil=#{pencil},ballpen=#{ballpen} where name=#{name}
+</update>
+<delete id="delete">
+delete pocket where name=#{name}
+</delete>
+</mapper>
