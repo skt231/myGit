@@ -7,7 +7,7 @@
 </head>
 <body>
 insert
-<form action="/ex/insert" method="post">
+<form action="/ex/admin/insert" method="post">
 id<input type="text" name=id >
 pw<input type="text" name=pw >
 ad_num<input type="text" name=ad_num >

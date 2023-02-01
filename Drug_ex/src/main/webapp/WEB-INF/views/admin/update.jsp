@@ -8,12 +8,10 @@
 </head>
 <body>
 update
-<form action="/ex/update" method="post">
-id<input type="text" name=id value="${AdminDto.id }" readonly>
-pw<input type="text" name=pw value="${AdminDto.pw }">
-ad_num<input type="text" name=ad_num value="${AdminDto.ad_num }">
-
-
+<form action="/ex/admin/update" method="post">
+id<input type="text" name=id value="${adminDto.id }" readonly>
+pw<input type="text" name=pw value="${adminDto.pw }">
+Num : ${adminDto.ad_num }
 
 <input type="submit" value="수정">
 </form>

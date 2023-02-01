@@ -37,12 +37,12 @@
 		<th style="width: 200px">ad_num</th>
 	</tr>
 		<tr>
-		    <td><a href="/ex/delete?id=${dto.id }">삭제</a></td>
+		    <td><a href="/ex/admin/delete?id=${dto.id }">삭제</a></td>
 			<td >${dto.pw}</td>
 			<td >${dto.ad_num }</td>
 		</tr>
 	</table>
-	<a href='/ex/update?id=${dto.id }&pw=${dto.pw }&ad_num=${dto.ad_num }/>' >수정</a>
+	<a href="/ex/admin/update?id=${dto.id }&pw=${dto.pw }&ad_num=${dto.ad_num }">수정</a>
 	 
 
 

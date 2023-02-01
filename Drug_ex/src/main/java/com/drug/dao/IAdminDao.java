@@ -9,5 +9,5 @@ public interface IAdminDao {
 	public void update(AdminDto dto) throws Exception;
 	public void delete(String id) throws Exception;
 	public ArrayList<AdminDto> selectAll() throws Exception;
-	public AdminDto selectName(String id) throws Exception;
+	public AdminDto selectId(String id) throws Exception;
 }

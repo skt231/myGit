@@ -47,13 +47,13 @@
 	<c:forEach items="${list}" var="dto">	
 		<tr>
 		<!--시간추가는 나중에 -->
-			<td><a href="/ex/selectId?id=${dto.id }">${dto.id }</a></td>
+			<td><a href="/ex/admin/selectId?id=${dto.id }">${dto.id }</a></td>
 			<td >${dto.pw}</td>
 			<td >${dto.ad_num }</td>
 			
 		</tr>
 	</c:forEach>
     </table>
-	<a href="/ex/insert">새글</a>
+	<a href="/ex/admin/insert">새글</a>
 </body>
 </html>

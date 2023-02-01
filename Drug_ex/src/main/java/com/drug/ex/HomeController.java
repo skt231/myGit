@@ -43,47 +43,60 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "redirect:selectAll";
+		return "redirect:admin/selectAll";
 	}
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	public String admin(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "redirect:admin/selectAll";
+	}
+	@RequestMapping(value = "/admin/update", method = RequestMethod.GET)
 	public String update(AdminDto adminDto) {
 		System.out.println(adminDto);
-		return "update";
+		return "admin/update";
 	}
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/update", method = RequestMethod.POST)
 	public String updateDB(AdminDto adminDto,RedirectAttributes rttr) throws Exception{
 		service.update(adminDto);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:selectAll";
+		return "redirect:/admin/selectAll";
 	}
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/delete", method = RequestMethod.GET)
 	public String delete(String id,RedirectAttributes rttr) throws Exception {
 		service.delete(id);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:selectAll";
+		return "redirect:/admin/selectAll";
 	}
 	
-	@RequestMapping(value = "/selectName", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/selectId", method = RequestMethod.GET)
 	public String selectName(String id,Model model) throws Exception {
 		model.addAttribute("dto", service.selectId(id) );
-		return "selectName";
+		return "admin/selectId";
 	}
 	
-	@RequestMapping(value = "/selectAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/selectAll", method = RequestMethod.GET)
 	public String selectAll(Model model) throws Exception {
 		model.addAttribute("list", service.selectAll() );
-		return "selectAll";
+		return "admin/selectAll";
 	}
-	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/insert", method = RequestMethod.GET)
 	public String insert() {
-		return "insert";
+		return "admin/insert";
 	}
-	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/insert", method = RequestMethod.POST)
 	public String insertDB(AdminDto adminDto,RedirectAttributes rttr) throws Exception{
 		service.insert(adminDto);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/selectAll";
+		return "redirect:/admin/selectAll";
 	}
 	
 }

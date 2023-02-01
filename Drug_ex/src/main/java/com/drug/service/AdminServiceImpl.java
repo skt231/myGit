@@ -46,7 +46,7 @@ public class AdminServiceImpl implements IAdminService {
 	@Override
 	public AdminDto selectId(String id) throws Exception {
 		IAdminDao dao = sqlSession.getMapper(IAdminDao.class);
-		return dao.selectName(id);
+		return dao.selectId(id);
 	}
 
 }
