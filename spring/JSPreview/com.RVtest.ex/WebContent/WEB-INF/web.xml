@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="dd" >
+<web-app xmlns:xsi="dd">
 	<display-name>MustHaveJSP</display-name>
 	<welcome-file-list>
-	..생략..
+		..생략..
 	</welcome-file-list>
-	
+
 	<context-param>
 		<param-name>INIT_PARAM</param-name>
 		<param-value>web.xml에 저장한 초기화 매개변수</param-value>
 	</context-param>
-	</web-app>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ImplicitObject/Exception.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>405</error-code>
+		<location>/ImplicitObject/Exception.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ImplicitObject/Exception.jsp</location>
+	</error-page>
+</web-app>
