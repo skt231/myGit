@@ -1,25 +1,37 @@
-<%@ page import="common.DBConn"%>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="common.JDBConnect"%>
+<%@ page import="common.DBConnPool" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>JDBC</title>
 </head>
 <body>
-	<h2>회원추가 테스트</h2>
+	<h2>JDBC 테스트1</h2>
 	<%
-	//테스트용 입력갑 준비
-	String id="test1";
-	String pass="1111";
-	String name="테스트1회원";
-	
-	//쿼리문생성
-	String sql="INSERT INTO member VALUES(?,?,?,sysdate)";
-	PreparedStatement psmt = PrepareStatement(sql);
+		JDBConnect jdbc1 = new JDBConnect();
+		jdbc1.close();
+	%>
+	<h2>JDBC 테스트2</h2>
+	<%
+		String driver = application.getInitParameter("OracleDriver");
+		String url = application.getInitParameter("OracleURL");
+		String id = application.getInitParameter("OracleId");
+		String pwd = application.getInitParameter("OraclePwd");
+
+		JDBConnect jdbc2 = new JDBConnect(driver, url, id, pwd);
+		jdbc2.close();
+	%>
+	<h2>JDBC테스트3</h2>
+	<%
+		JDBConnect jdbc3 = new JDBConnect(application);
+		jdbc3.close();
+	%>
+	<h2>커넥션 풀 테스트</h2>
+	<%
+		DBConnPool pool=new DBConnPool();
+		pool.close();
 	%>
 </body>
 </html>

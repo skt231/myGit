@@ -37,5 +37,8 @@
 		<param-name>OraclePwd</param-name>
 		<param-value>human</param-value>
 	</context-param>
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
 </web-app>
 	
