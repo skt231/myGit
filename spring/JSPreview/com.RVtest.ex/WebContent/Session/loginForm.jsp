@@ -16,7 +16,7 @@
 	%>
 	<script>
 		function validateForm(form) {
-			if (!from.user_id.value) {
+			if (!form.user_id.value) {
 				alert("아이디를 입력하세요.");
 				return false;
 			}
@@ -28,7 +28,7 @@
 	</script>
 	<form action="LoginProcess.jsp" method="post" name="loginFrm"
 		onsubmit="return validateForm(this);">
-		아이디:<input type="test" name="user_id" /><br /> 비밀번호:<input
+		아이디:<input type="text" name="user_id" /><br /> 비밀번호:<input
 			type="password" name="user_pw" /><br /> <input type="submit"
 			value="로그인" />
 	</form>
